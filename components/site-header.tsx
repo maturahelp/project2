@@ -11,10 +11,10 @@ export function SiteHeader() {
           <Link href="/" className="transition-colors hover:text-foreground">
             Начало
           </Link>
-          <Link href="/" className="transition-colors hover:text-foreground">
+          <Link href="/maistori" className="transition-colors hover:text-foreground">
             Услуги
           </Link>
-          <Link href="/" className="transition-colors hover:text-foreground">
+          <Link href="/vhod" className="transition-colors hover:text-foreground">
             Вход
           </Link>
         </nav>

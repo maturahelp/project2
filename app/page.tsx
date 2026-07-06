@@ -15,13 +15,13 @@ export default function HomePage() {
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <Link
-          href="/"
+          href="/maistori"
           className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
         >
           Намери майстор
         </Link>
         <Link
-          href="/"
+          href="/registratsiya"
           className="inline-flex h-11 items-center justify-center rounded-md border px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
         >
           Стани майстор
