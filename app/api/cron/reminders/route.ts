@@ -4,8 +4,8 @@ import { notifyReminder, type ReminderRow } from "@/lib/notify/events";
 
 export const dynamic = "force-dynamic";
 
-// How far ahead we remind (hours). Runs hourly via vercel.json; each confirmed
-// booking is claimed exactly once thanks to claim_due_reminders + reminder_sent.
+// How far ahead we remind (hours). Runs daily via vercel.json (Hobby plan limit);
+// each confirmed booking is claimed exactly once thanks to claim_due_reminders + reminder_sent.
 const WINDOW_HOURS = 24;
 
 export async function GET(request: NextRequest) {
