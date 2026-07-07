@@ -6,8 +6,9 @@ Studio24-style: майстори publish services + prices, clients book time sl
 manage their clients, bookings, reminders and reviews. NOT just a lead-gen board.
 
 ## Repository (LOCKED)
-- GitHub repo name: **project2**, owned by the account **danko1212**.
+- GitHub repo name: **project2**, owned by the account **danko1212** (now shown as **maturahelp** on GitHub after a username change; `danko1212/project2` redirects to `maturahelp/project2`).
 - This is the ONLY correct repository for Майстор24. Never push to, pull from, or create any other repo for this project.
+- ONLY push from the **danko1212** GitHub account. Do NOT push from `danko1213` (it lacks access). If `gh auth status` shows another account active, switch first: `gh auth switch --hostname github.com --user Danko1212`.
 
 ## Stack (LOCKED — do not change without asking)
 - Next.js (App Router) + TypeScript
