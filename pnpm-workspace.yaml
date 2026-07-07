@@ -1,0 +1,7 @@
+# Approve build scripts for these trusted native packages.
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver
