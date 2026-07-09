@@ -83,7 +83,7 @@ export async function signUp(
 
   // Email confirmation OFF → session is returned immediately, log the user in.
   if (data.session) {
-    redirect(role === "maistor" ? "/dashboard" : "/account");
+    redirect(role === "maistor" ? "/dashboard/onboarding" : "/account");
   }
 
   // Email confirmation ON → no session yet; ask the user to confirm.

@@ -66,6 +66,7 @@ export interface Database {
           bio: string | null;
           categories: string[];
           base_city: string | null;
+          bulstat: string | null;
           verified: boolean;
           rating_avg: number;
           rating_count: number;
@@ -79,6 +80,7 @@ export interface Database {
           bio?: string | null;
           categories?: string[];
           base_city?: string | null;
+          bulstat?: string | null;
           verified?: boolean;
           rating_avg?: number;
           rating_count?: number;
@@ -92,6 +94,7 @@ export interface Database {
           bio?: string | null;
           categories?: string[];
           base_city?: string | null;
+          bulstat?: string | null;
           verified?: boolean;
           rating_avg?: number;
           rating_count?: number;
@@ -267,6 +270,31 @@ export interface Database {
           maistor_phone: string | null;
           client_email: string | null;
         }[];
+      };
+      complete_maistor_onboarding: {
+        Args: {
+          p_slug_base: string;
+          p_display_name: string;
+          p_bio: string | null;
+          p_base_city: string;
+          p_categories: string[];
+          p_bulstat: string | null;
+          p_services: Json;
+          p_working_hours: Json;
+        };
+        Returns: { slug: string }[];
+      };
+      update_maistor_profile: {
+        Args: {
+          p_display_name: string;
+          p_bio: string | null;
+          p_base_city: string;
+          p_categories: string[];
+          p_bulstat: string | null;
+          p_services: Json;
+          p_working_hours: Json;
+        };
+        Returns: undefined;
       };
     };
     Enums: {

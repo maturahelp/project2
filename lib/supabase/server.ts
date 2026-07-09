@@ -47,9 +47,13 @@ export async function createClient() {
 
 /**
  * Returns the role-appropriate home path for the current user,
- * or `/vhod` when there is no authenticated user.
+ * or `/vhod` when there is no authenticated user. A майстор who hasn't
+ * finished the onboarding wizard yet is resumed there instead of landing on
+ * an empty dashboard.
  */
-export async function getRoleHome(): Promise<"/dashboard" | "/account" | "/vhod"> {
+export async function getRoleHome(): Promise<
+  "/dashboard" | "/dashboard/onboarding" | "/account" | "/vhod"
+> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -62,5 +66,13 @@ export async function getRoleHome(): Promise<"/dashboard" | "/account" | "/vhod"
     .eq("id", user.id)
     .single();
 
-  return profile?.role === "maistor" ? "/dashboard" : "/account";
+  if (profile?.role !== "maistor") return "/account";
+
+  const { data: maistorProfile } = await supabase
+    .from("maistor_profiles")
+    .select("user_id")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  return maistorProfile ? "/dashboard" : "/dashboard/onboarding";
 }
